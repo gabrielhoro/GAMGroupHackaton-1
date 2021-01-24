@@ -1,4 +1,5 @@
 import flask
+import app
 
 
 @app.route("/home")
