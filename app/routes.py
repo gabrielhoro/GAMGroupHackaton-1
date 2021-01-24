@@ -14,7 +14,6 @@ def homepage():
 @app.route("/sign-up/", methods=["Get", "POST"])
 def add_user():
 
-
     form = forms.SignupForm()
 
     if flask.request.method == "POST":
@@ -33,7 +32,7 @@ def add_user():
             else:
                 flask.flash("Something went wrong..")
 
-            return flask.redirect("/")
+            return flask.redirect("/home")
 
     return flask.render_template("signup.html", form=form)
 
@@ -54,7 +53,7 @@ def signin():
             if user.password == form.password.data:
                 flask_login.login_user(user)
                 flask.flash(f"Welcome {user.name}")
-                return flask.redirect("/")
+                return flask.redirect("/home")
             else:
                 flask.flash("Incorrect Username or Password")
     return flask.render_template("signin.html", form=form)

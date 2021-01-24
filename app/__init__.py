@@ -22,7 +22,7 @@ app.config["UPLOAD_DIR"] = os.path.join(basedir, "uploads") # uploads/ need to e
 
 # Format of the URL: postgres://<username>:<password>@localhost:5432/<db name>
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://postgres:postgres@localhost:5432/seconddb"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://postgres:postgres@localhost:5432/gam"
 
 # Create the virtual database
 db = flask_sqlalchemy.SQLAlchemy(app)    # |>
