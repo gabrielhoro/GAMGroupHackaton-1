@@ -1,8 +1,12 @@
 import flask
+<<<<<<< HEAD
 import os
 import flask_login
 # Blank line -- ^ Python installed packages ^
 #               v Local packages v
+=======
+import app
+>>>>>>> main
 
 from . import app, db       # variables
 from . import models, forms # modules
