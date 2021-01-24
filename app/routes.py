@@ -1,11 +1,17 @@
 import flask
+import os
+import flask_login
+# Blank line -- ^ Python installed packages ^
+#               v Local packages v
 
+from . import app, db       # variables
+from . import models, forms # modules
 
 @app.route("/home")
 def homepage():
     return "Welcome"
 
-@app.route("/test-file-upload/", methods=["Get", "POST"])
+@app.route("/sign-up/", methods=["Get", "POST"])
 def add_user():
 
 
