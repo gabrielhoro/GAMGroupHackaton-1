@@ -24,7 +24,6 @@ def add_user():
             # Create a user
             user = models.User(
                 name=form.username.data,
-                age=form.age.data,
                 password=form.password.data
             )
 
@@ -33,7 +32,7 @@ def add_user():
             else:
                 flask.flash("Something went wrong..")
 
-            return flask.redirect("/home")
+            return flask.redirect("/sign-in/")
 
     return flask.render_template("signup.html", form=form)
 
@@ -41,7 +40,6 @@ def add_user():
 def signout():
     flask_login.logout_user()
     return flask.redirect("/")
-
 
 @app.route("/sign-in/", methods=["GET", "POST"])
 def signin():
