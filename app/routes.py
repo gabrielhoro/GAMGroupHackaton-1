@@ -8,9 +8,13 @@ import app
 from . import app, db       # variables
 from . import models, forms # modules
 
-@app.route("/home")
+@app.route("/")
 def homepage():
-    return "Welcome"
+    return flask.render_template("main.html")
+
+@app.route("/about-us")
+def aboutus():
+    return flask.render_template("aboutus.html")
 
 @app.route("/sign-up/", methods=["Get", "POST"])
 def add_user():
