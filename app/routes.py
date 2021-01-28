@@ -12,10 +12,6 @@ from . import models, forms # modules
 def homepage():
     return flask.render_template("main.html")
 
-@app.route("/about-us")
-def aboutus():
-    return flask.render_template("aboutus.html")
-
 @app.route("/sign-up/", methods=["Get", "POST"])
 def add_user():
 
@@ -60,3 +56,11 @@ def signin():
             else:
                 flask.flash("Incorrect Username or Password")
     return flask.render_template("signin.html", form=form)
+
+@app.route("/who-we-are")
+def whoweare():
+    return flask.render_template("whoweare.html")
+
+@app.route("/developers-institute")
+def developersinst():
+    return flask.render_template("developersinstitute.html")
